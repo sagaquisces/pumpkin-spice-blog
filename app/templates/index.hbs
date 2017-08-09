@@ -1,0 +1,13 @@
+<h1>Welcome To The Pumpkin Spice Fail Blog</h1>
+
+<p>They have taken over and must be stopped.</p>
+
+<ul>
+  {{#each model as |entry|}}
+     <li>{{entry.author}}'s new article, titled {{entry.title}}. Read it here: {{entry.content}}</li>
+  {{/each}}
+</ul>
+
+
+{{#link-to 'about'}}About Us{{/link-to}}
+{{#link-to 'contact'}}Click here to contact us.{{/link-to}}
