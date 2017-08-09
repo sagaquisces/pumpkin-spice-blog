@@ -4,7 +4,7 @@
 
 <ul>
   {{#each model as |entry|}}
-     <li>{{entry.author}}'s new article, titled {{entry.title}}. Read it here: {{entry.content}}</li>
+    {{entry-tile entry=entry}}
   {{/each}}
 </ul>
 
