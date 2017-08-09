@@ -1,8 +1,9 @@
 <li>
   {{entry.author}}'s new article, titled {{entry.title}}. Read it here: {{entry.content}}
   {{#if isImageShowing}}
-    <p><img {{action 'imageHide'}} src={{entry.image}} alt={{entry.type}} ></p>
+    <p><img src={{entry.image}} alt={{entry.type}} {{action 'imageHide'}}></p>
   {{else}}
     <button {{action 'imageShow'}}>Show image</button>
   {{/if}}
+  <button {{action 'delete' entry}}>Delete Blog Entry</button>
 </li>
