@@ -12,6 +12,16 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
 
+    update(entry, params) {
+      debugger;
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          entry.set(key,params[key]);
+        }
+      });
+      entry.save();
+      this.transitionTo('index');
+    },
     destroyEntry(entry) {
       entry.destroyRecord();
       this.transitionTo('index');
