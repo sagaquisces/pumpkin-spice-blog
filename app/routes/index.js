@@ -13,7 +13,6 @@ export default Ember.Route.extend({
     },
 
     update(entry, params) {
-      debugger;
       Object.keys(params).forEach(function(key) {
         if(params[key]!==undefined) {
           entry.set(key,params[key]);

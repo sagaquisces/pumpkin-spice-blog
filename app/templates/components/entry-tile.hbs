@@ -1,5 +1,7 @@
-<li>
-  {{entry.author}}'s new article, titled {{entry.title}}. Read it here: {{entry.content}}
+<li class="list-group-item">
+  <h2>{{entry.title}}</h2>
+  <h5><em>by <strong>{{entry.author}}</strong></em></h5>
+  <p class="lead">{{entry.content}}</p>
   {{#if isImageShowing}}
     <p><img src={{entry.image}} alt={{entry.type}} {{action 'imageHide'}}></p>
   {{else}}
@@ -7,5 +9,4 @@
   {{/if}}
   {{update-entry entry=entry update="update"}}
   <button {{action 'delete' entry}}>Delete Blog Entry</button>
-  <hr>
 </li>
