@@ -16,6 +16,14 @@ module.exports = function(environment) {
         Date: false
       }
     },
+    firebase: {
+      apiKey: 'AIzaSyCi9i8PjkjOkXQV0e-DzDhT0LItc7FTJYI',
+      authDomain: 'pumpkin-spice-blog.firebaseapp.com',
+      databaseURL: 'https://pumpkin-spice-blog.firebaseio.com',
+      storageBucket: '',
+    },
+
+
 
     APP: {
       // Here you can pass flags/options to your application instance
