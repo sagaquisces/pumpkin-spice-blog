@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isImageShowing: false,
   updateEntryForm: false,
+  addNewComment: false,
   actions: {
     imageShow: function() {
       this.set('isImageShowing', true);
@@ -12,6 +13,9 @@ export default Ember.Component.extend({
     },
     updateEntryForm() {
       this.set('updateEntryForm', true);
+    },
+    commentFormShow() {
+      this.set('addNewComment', true);
     },
     update(entry) {
       var params = {
@@ -27,6 +31,15 @@ export default Ember.Component.extend({
       if (confirm('Are you sure you want to delete this wonderment of blog entries?')) {
         this.sendAction('destroyEntry', entry);
       }
+    },
+    saveComment() {
+      var clickedEntry = this.entry;
+      var params = {
+        creator: this.get('creator'),
+        blurb: this.get('blurb')
+      };
+      this.set('addNewComment', false);
+      this.sendAction('saveComment', params, clickedEntry);
     }
   }
 });

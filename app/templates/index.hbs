@@ -5,8 +5,8 @@
 
 <ul>
   {{#each model as |entry|}}
-    {{entry-tile entry=entry update="update" destroyEntry="destroyEntry"}}
+    {{entry-tile entry=entry saveComment="saveComment" update="update" destroyEntry="destroyEntry"}}
   {{/each}}
 </ul>
 
-{{new-entry saveEntry2="saveEntry3"}}
+{{new-entry entry=model saveEntry2="saveEntry3"}}
