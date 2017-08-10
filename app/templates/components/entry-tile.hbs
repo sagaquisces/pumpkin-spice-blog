@@ -1,12 +1,24 @@
 <li class="list-group-item">
-  <h2>{{entry.title}}</h2>
+  <h2 class="list-group-item-heading">{{entry.title}}</h2>
   <h5><em>by <strong>{{entry.author}}</strong></em></h5>
-  <p class="lead">{{entry.content}}</p>
+  <p class="list-group-item-text lead">{{entry.content}}</p>
   {{#if isImageShowing}}
     <p><img src={{entry.image}} alt={{entry.type}} {{action 'imageHide'}}></p>
-  {{else}}
-    <button {{action 'imageShow'}}>Show image</button>
   {{/if}}
-  {{update-entry entry=entry update="update"}}
-  <button {{action 'delete' entry}}>Delete Blog Entry</button>
+  {{#if updateEntryForm}}
+    {{update-entry entry=entry}}
+  {{/if}}
+  <div class="btn-group">
+    {{#if isImageShowing}}
+      <button type="button" class="btn btn-warning" {{action 'imageHide'}}>Hide image</button>
+    {{else}}
+      <button type="button" class="btn btn-primary" {{action 'imageShow'}}>Show image</button>
+    {{/if}}
+    {{#if updateEntryForm}}
+      <button  type="button" class="btn btn-warning" form="updateEntryForm" {{action 'update' entry}}>Save Changes</button>
+    {{else}}
+      <button  type="button" class="btn btn-primary" {{action 'updateEntryForm'}}>Update Blog Entry</button>
+    {{/if}}
+    <button  type="button" class="btn btn-primary" {{action 'delete' entry}}>Delete Blog Entry</button>
+  </div>
 </li>

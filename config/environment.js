@@ -17,9 +17,9 @@ module.exports = function(environment) {
       }
     },
     firebase: {
-      apiKey: 'AIzaSyCi9i8PjkjOkXQV0e-DzDhT0LItc7FTJYI',
-      authDomain: 'pumpkin-spice-blog.firebaseapp.com',
-      databaseURL: 'https://pumpkin-spice-blog.firebaseio.com',
+      apiKey: 'AIzaSyAUBNfJgSbf_3Dz7oZGFTWVlp5sDwvjHKQ',
+      authDomain: 'pumpkin-spice-blog-5ee2b.firebaseapp.com',
+      databaseURL: 'https://pumpkin-spice-blog-5ee2b.firebaseio.com',
       storageBucket: '',
     },
 
