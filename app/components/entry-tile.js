@@ -32,6 +32,9 @@ export default Ember.Component.extend({
         this.sendAction('destroyEntry', entry);
       }
     },
+    destroyComment(comment) {
+      this.sendAction('destroyComment', comment);
+    },
     saveComment() {
       var clickedEntry = this.entry;
       var params = {
