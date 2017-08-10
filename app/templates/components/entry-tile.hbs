@@ -46,6 +46,7 @@
   <ul>
     {{#each entry.comments as |comment|}}
       {{comment-tile comment=comment destroyComment="destroyComment"}}
+      {{update-comment comment=comment updateComment="updateComment"}}
     {{/each}}
   </ul>
 </li>

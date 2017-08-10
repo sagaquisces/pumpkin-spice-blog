@@ -4,6 +4,7 @@ export default Ember.Component.extend({
   isImageShowing: false,
   updateEntryForm: false,
   addNewComment: false,
+  updateCommentForm: false,
   actions: {
     imageShow: function() {
       this.set('isImageShowing', true);
@@ -26,6 +27,10 @@ export default Ember.Component.extend({
       };
       this.sendAction('update', entry, params);
       this.set('updateEntryForm', false);
+    },
+    updateComment(comment, params) {
+      this.sendAction('updateComment', comment, params);
+      this.set('updateCommentForm', false);
     },
     delete (entry) {
       if (confirm('Are you sure you want to delete this wonderment of blog entries?')) {

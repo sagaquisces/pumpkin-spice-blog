@@ -31,6 +31,15 @@ export default Ember.Route.extend({
       entry.save();
       this.transitionTo('index');
     },
+    updateComment(comment, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          comment.set(key,params[key]);
+        }
+      });
+      comment.save();
+      this.transitionTo('index');
+    },
     destroyEntry(entry) {
       var comment_deletions = entry.get('comments').map(function(comment) {
         return comment.destroyRecord();
