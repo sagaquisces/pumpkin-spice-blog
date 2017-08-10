@@ -20,33 +20,18 @@
       <button  type="button" class="btn btn-primary" {{action 'updateEntryForm'}}>Update Blog Entry</button>
     {{/if}}
     <button  type="button" class="btn btn-primary" {{action 'delete' entry}}>Delete Blog Entry</button>
-    {{#if addNewComment}}
-    <h1>New Comment</h1>
-      <div>
-        <form>
-          <div class="form-group">
-            <label for="creator">Creator</label>
-            {{input value=creator id="creator"}}
-          </div>
-          <div class="form-group">
-            <label for="blurb">Blurb</label>
-            {{textarea value=blurb id="blurb"}}
-          </div>
-          <button {{action 'saveComment'}}>Save</button>
-        </form>
-      </div>
-    {{else}}
-      <button {{action 'commentFormShow'}}>New Comment</button>
-    {{/if}}
+    {{new-comment saveComment="saveComment" entry=entry}}
 
 
 
   </div>
-  <h2>Comments</h2>
-  <ul>
-    {{#each entry.comments as |comment|}}
-      {{comment-tile comment=comment destroyComment="destroyComment"}}
-      {{update-comment comment=comment updateComment="updateComment"}}
-    {{/each}}
-  </ul>
+  <div class="panel panel-default">
+    <div class="panel-heading"><h4>Comments</h4></div>
+    <div class="panel-body">
+      {{#each entry.comments as |comment|}}
+        {{comment-tile comment=comment destroyComment="destroyComment"}}
+        {{update-comment comment=comment updateComment="updateComment"}}
+      {{/each}}
+    </div>
+  </div>
 </li>

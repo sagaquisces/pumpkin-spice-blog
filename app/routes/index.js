@@ -12,9 +12,10 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
 
-    saveComment(params, clickedEntry) {
+    saveComment(params) {
       var newComment = this.store.createRecord('comment', params);
-      var entry = clickedEntry;
+      console.log(params.blurb + "is the blurb");
+      var entry = params.entry;
       entry.get('comments').addObject(newComment);
       newComment.save().then(function() {
         return entry.save();

@@ -9,7 +9,8 @@ export default Ember.Component.extend({
     saveComment() {
       var params = {
         creator: this.get('creator'),
-        blurb: this.get('blurb')
+        blurb: this.get('blurb'),
+        entry: this.get('entry')
       };
       this.set('addNewComment', false);
       this.sendAction('saveComment', params);

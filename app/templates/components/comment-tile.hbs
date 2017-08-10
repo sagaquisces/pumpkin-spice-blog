@@ -1,3 +1,8 @@
-<li>{{comment.creator}} - {{comment.blurb}}</li>
+
+
+<blockquote>
+<p>{{comment.blurb}}</p>
+<footer><em>{{comment.creator}}</em></footer>
+</blockquote>
 
 <button type="button" class="btn btn-xs" {{action 'delete' comment}}>Delete Comment</button>

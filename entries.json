@@ -13,5 +13,12 @@
     "title": "How to make soggy veggies even worse",
     "content": "This must be stopped",
     "image": "http://runt-of-the-web.com/wordpress/wp-content/uploads/2016/09/better-tasting-broccoli1.png"
+    }],
+    "comments": [{
+      "creator": "Michael",
+      "blurb": "A long blurb to do stuff."
+    }, {
+      "creator": "Dravus",
+      "blurb": "A long blurb to do more stuff."
     }]
 }

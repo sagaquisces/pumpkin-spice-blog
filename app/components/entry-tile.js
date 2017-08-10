@@ -40,14 +40,15 @@ export default Ember.Component.extend({
     destroyComment(comment) {
       this.sendAction('destroyComment', comment);
     },
-    saveComment() {
-      var clickedEntry = this.entry;
-      var params = {
-        creator: this.get('creator'),
-        blurb: this.get('blurb')
-      };
+    saveComment(params) {
+      // console.log(params+"from entry-tile");
+      // var clickedEntry = this.entry;
+      // var params = {
+      //   creator: this.get('creator'),
+      //   blurb: this.get('blurb')
+      // };
       this.set('addNewComment', false);
-      this.sendAction('saveComment', params, clickedEntry);
+      this.sendAction('saveComment', params);
     }
   }
 });
